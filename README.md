@@ -3,7 +3,7 @@
 My solution to [Kaggle Playground Series, Season 6 Episode 10](https://www.kaggle.com/competitions/playground-series-s6e10).
 The task is to predict the probability that an airline passenger is **satisfied**. Submissions are scored with **ROC AUC**.
 
-**Current best:** public LB **0.96106** (rank 414 of 1,414 on 2026-10-10), 5-fold CV **0.96153**.
+**Current best:** public LB **0.96140** (rank 320 of 1,426 on 2026-10-10), 5-fold CV **0.96175**.
 
 The competition data is synthetic, generated from the real
 [Airline Passenger Satisfaction](https://www.kaggle.com/datasets/teejmahal20/airline-passenger-satisfaction) dataset
@@ -140,7 +140,11 @@ Models are chosen by CV, not by public leaderboard score.
 | RealMLP v2 | 0.96107 |
 | XGBoost v2 | 0.96108 |
 | XGBoost v3 | 0.96127 |
-| **LightGBM v3** | **0.96130** |
+| LightGBM v3 | 0.96130 |
+| RealMLP, `flat_anneal`, raw + auxiliary features | 0.96097 |
+| XGBoost v3 + auxiliary features | 0.96136 |
+| LightGBM v3 + auxiliary features | 0.96139 |
+| **RealMLP, `flat_anneal`, v3 + auxiliary features** | **0.96147** |
 
 Submissions:
 
@@ -148,10 +152,11 @@ Submissions:
 |---|---|---|---|
 | stack_v2 | XGBoost/LightGBM v2 + CatBoost | 0.96136 | 0.96102 |
 | stack_v5 | 12 models (v2 trees + RealMLP, several seeds) | 0.96144 | 0.96101 |
-| **stack_v7** | 10 models (LightGBM v3 + XGBoost v3 + XGBoost v2 seeds, CatBoost, RealMLP) | **0.96153** | **0.96106** |
+| stack_v7 | 10 models (LightGBM v3 + XGBoost v3 + XGBoost v2 seeds, CatBoost, RealMLP) | 0.96153 | 0.96106 |
+| **stack_v9** | 15 models: stack_v7 + auxiliary-feature XGBoost/LightGBM + two `flat_anneal` RealMLPs | **0.96175** | **0.96140** |
 
-Round 2 (auxiliary-task features, `flat_anneal` RealMLPs, CatBoost with its own categorical statistics) is
-in progress. See `src/queue_round2.sh` and `logs/`.
+The auxiliary-task features were the biggest round-2 gain: +0.00009 for each tree model, and the RealMLPs
+that use them carry the largest stack weights. More round-2 models are still training (`src/queue_round2.sh`).
 
 ## What didn't help
 - Appending the original dataset to the training folds once the original-model logit was a feature.
