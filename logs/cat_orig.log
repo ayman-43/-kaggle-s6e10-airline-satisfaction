@@ -1,0 +1,1 @@
+Default metric period is 5 because AUC is/are not implemented for GPU

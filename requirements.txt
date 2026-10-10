@@ -1,0 +1,12 @@
+# Tested with Python 3.12 on Windows 11, NVIDIA RTX 2050 (4 GB). XGBoost/CatBoost/RealMLP use CUDA.
+numpy==2.5.1
+pandas==3.0.6
+scikit-learn==1.9.1
+scipy==1.18.1
+lightgbm==4.7.0
+xgboost==3.4.1
+catboost==1.2.10
+pytabkit==1.7.3
+torch==2.14.1
+pyarrow==25.0.1
+kaggle==2.2.4

@@ -1,0 +1,17 @@
+# Data (download from Kaggle, see README)
+data/
+# Large generated artifacts: out-of-fold / test predictions and submission files
+oof/
+submissions/
+# Training noise
+catboost_info/
+**/catboost_info/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+# Third-party notebooks used as reference (linked in the README instead)
+notebooks/reference/
+# Never commit credentials
+kaggle.json
+access_token
+.env

@@ -1,0 +1,6 @@
+fold 0: auc=0.96074 iters=1144 (521s)
+fold 1: auc=0.95956 iters=1911 (1464s)
+fold 2: auc=0.96128 iters=1528 (2190s)
+fold 3: auc=0.96064 iters=1398 (2843s)
+fold 4: auc=0.96066 iters=1892 (3697s)
+cat_noorig CV AUC: 0.96056

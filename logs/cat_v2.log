@@ -1,0 +1,16 @@
+C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\preprocessing\_target_encoder.py:342: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+fold 0: auc=0.96105 iters=563 (389s)
+C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\preprocessing\_target_encoder.py:342: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+fold 1: auc=0.95979 iters=607 (763s)
+C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\preprocessing\_target_encoder.py:342: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+fold 2: auc=0.96128 iters=594 (1143s)
+C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\preprocessing\_target_encoder.py:342: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+fold 3: auc=0.96101 iters=284 (1393s)
+C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\preprocessing\_target_encoder.py:342: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+fold 4: auc=0.96098 iters=460 (1690s)
+cat_v2 CV AUC: 0.96082
