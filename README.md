@@ -143,7 +143,9 @@ Models are chosen by CV, not by public leaderboard score.
 | LightGBM v3 | 0.96130 |
 | RealMLP, `flat_anneal`, raw + auxiliary features | 0.96097 |
 | XGBoost v3 + auxiliary features | 0.96136 |
+| RealMLP, `flat_anneal`, raw + both auxiliary sets | 0.96087 |
 | LightGBM v3 + auxiliary features | 0.96139 |
+| XGBoost v3 + auxiliary + original-data auxiliary features | 0.96142 |
 | **RealMLP, `flat_anneal`, v3 + auxiliary features** | **0.96147** |
 
 Submissions:
@@ -156,7 +158,8 @@ Submissions:
 | **stack_v9** | 15 models: stack_v7 + auxiliary-feature XGBoost/LightGBM + two `flat_anneal` RealMLPs | **0.96175** | **0.96140** |
 
 The auxiliary-task features were the biggest round-2 gain: +0.00009 for each tree model, and the RealMLPs
-that use them carry the largest stack weights. More round-2 models are still training (`src/queue_round2.sh`).
+that use them carry the largest stack weights. Still to train: `cat_ctr` (CatBoost with its own categorical statistics), `lgb_v3_ogev`
+and the round-3 seed models in `src/queue_round3.sh`.
 
 ## What didn't help
 - Appending the original dataset to the training folds once the original-model logit was a feature.
