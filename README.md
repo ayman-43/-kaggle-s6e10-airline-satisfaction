@@ -176,6 +176,7 @@ Not finished: `realmlp_v3fa_aux_s3` (CUDA out of memory on the 4 GB GPU at the l
 ## What didn't help
 - Appending the original dataset to the training folds once the original-model logit was a feature.
 - `--as-cat` categorical copies for XGBoost on top of the v2 features (0.96037 vs 0.96108 without).
+- A level-2 LightGBM stacker (`src/stack_lgb.py`, logits + base features): CV 0.96196 alone vs 0.96212 for the LR stack; the best rank blend gained only +0.00001.
 - Adding CatBoost v3 to the stack: its CV was unchanged (0.9615332 vs 0.9615343 without it).
 
 ## Credits

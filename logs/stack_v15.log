@@ -1,0 +1,19 @@
+models: 159
+fold 0: lr=0.96222 lgb=0.96210 it=606
+fold 1: lr=0.96130 lgb=0.96111 it=321
+fold 2: lr=0.96270 lgb=0.96260 it=398
+fold 3: lr=0.96235 lgb=0.96218 it=371
+fold 4: lr=0.96203 lgb=0.96192 it=373
+LR stack CV 0.96212  LGB stack CV 0.96196
+w_lgb=0.0 CV 0.96212
+w_lgb=0.1 CV 0.96212
+w_lgb=0.2 CV 0.96213
+w_lgb=0.3 CV 0.96212
+w_lgb=0.4 CV 0.96211
+w_lgb=0.5 CV 0.96210
+w_lgb=0.6 CV 0.96208
+w_lgb=0.7 CV 0.96206
+w_lgb=0.8 CV 0.96203
+w_lgb=0.9 CV 0.96200
+w_lgb=1.0 CV 0.96196
+wrote stack_v15_lgb.csv and stack_v15_blend.csv (w_lgb=0.2)
