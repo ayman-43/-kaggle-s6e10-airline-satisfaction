@@ -1,0 +1,7 @@
+10:48:37 start lgb_v3_ogev
+10:56:47 lgb_v3_ogev CV AUC: 0.96135
+10:56:47 start xgb_v3_aux_s2
+11:02:54 xgb_v3_aux_s2 CV AUC: 0.96138
+11:02:54 start lgb_v3_aux_s2
+11:13:21 lgb_v3_aux_s2 CV AUC: 0.96142
+11:13:21 start realmlp_v3fa_aux_s2

@@ -1,6 +1,7 @@
 """Stack saved models with a logistic regression on their OOF logits (scored with the same 5 folds).
 
-Usage: python src/stack.py name1 name2 ... [--out stack] [--C 1.0]
+Usage: python src/stack.py name1 name2 ... [--out stack] [--C 1.0] [--public MIN_AUC]
+--public also stacks the downloaded public OOFs (data/public_oof/survey.csv) scoring >= MIN_AUC.
 """
 import argparse
 
@@ -15,6 +16,7 @@ p = argparse.ArgumentParser()
 p.add_argument("names", nargs="+")
 p.add_argument("--out", default="stack")
 p.add_argument("--C", type=float, default=1.0)
+p.add_argument("--public", type=float, default=None)
 args = p.parse_args()
 
 train, test, _ = load()
@@ -26,8 +28,23 @@ def logit(a):
     return np.log(a / (1 - a))
 
 
-X = np.column_stack([logit(np.load(OOF_DIR / f"{n}_oof.npy")) for n in args.names])
-X_te = np.column_stack([logit(np.load(OOF_DIR / f"{n}_test.npy")) for n in args.names])
+def score(path):
+    a = np.load(path, allow_pickle=False).astype("float64").ravel()
+    return a if a.min() < 0 or a.max() > 1 else logit(a)  # some public files are already logits
+
+
+oof_paths = [OOF_DIR / f"{n}_oof.npy" for n in args.names]
+test_paths = [OOF_DIR / f"{n}_test.npy" for n in args.names]
+if args.public is not None:
+    pub = pd.read_csv(OOF_DIR.parent / "data" / "public_oof" / "survey.csv")
+    pub = pub[pub.auc >= args.public]
+    args.names += list(pub.name)
+    oof_paths += list(pub.oof)
+    test_paths += list(pub.test)
+X = np.column_stack([score(f) for f in oof_paths])
+X_te = np.column_stack([score(f) for f in test_paths])
+mu, sd = X.mean(0), X.std(0)
+X, X_te = (X - mu) / sd, (X_te - mu) / sd
 for n, col in zip(args.names, X.T):
     print(f"{n:20s} {roc_auc_score(y, col):.5f}")
 

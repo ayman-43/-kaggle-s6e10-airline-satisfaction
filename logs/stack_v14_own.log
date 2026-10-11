@@ -1,0 +1,27 @@
+cat_v2               0.96082
+cat_v3               0.96100
+lgb_v2               0.96105
+lgb_v2_s1            0.96105
+lgb_v2_s2            0.96108
+lgb_v3               0.96130
+lgb_v3_aux           0.96139
+lgb_v3_aux_s2        0.96142
+lgb_v3_ogev          0.96135
+realmlp_fa_aux       0.96097
+realmlp_fa_auxog     0.96087
+realmlp_s0           0.96075
+realmlp_s1           0.96073
+realmlp_v2_s0        0.96107
+realmlp_v3fa_aux     0.96147
+realmlp_v3fa_aux_s2  0.96147
+xgb_v2               0.96037
+xgb_v2_nocat         0.96108
+xgb_v2_nocat_s1      0.96110
+xgb_v2_nocat_s2      0.96108
+xgb_v3               0.96127
+xgb_v3_aux           0.96136
+xgb_v3_aux_s2        0.96138
+xgb_v3_auxog         0.96142
+stack CV AUC: 0.96177
+coefs: {'cat_v2': np.float64(0.066), 'cat_v3': np.float64(0.069), 'lgb_v2': np.float64(-0.0), 'lgb_v2_s1': np.float64(0.001), 'lgb_v2_s2': np.float64(0.006), 'lgb_v3': np.float64(0.057), 'lgb_v3_aux': np.float64(0.188), 'lgb_v3_aux_s2': np.float64(0.257), 'lgb_v3_ogev': np.float64(0.108), 'realmlp_fa_aux': np.float64(0.454), 'realmlp_fa_auxog': np.float64(0.485), 'realmlp_s0': np.float64(-0.011), 'realmlp_s1': np.float64(-0.013), 'realmlp_v2_s0': np.float64(-0.079), 'realmlp_v3fa_aux': np.float64(0.319), 'realmlp_v3fa_aux_s2': np.float64(0.321), 'xgb_v2': np.float64(-0.044), 'xgb_v2_nocat': np.float64(0.051), 'xgb_v2_nocat_s1': np.float64(0.027), 'xgb_v2_nocat_s2': np.float64(0.045), 'xgb_v3': np.float64(0.052), 'xgb_v3_aux': np.float64(0.216), 'xgb_v3_aux_s2': np.float64(0.222), 'xgb_v3_auxog': np.float64(0.25)}
+wrote C:\Users\ayman\OneDrive\Desktop\kaggle\new_project\submissions\stack_v14_own.csv

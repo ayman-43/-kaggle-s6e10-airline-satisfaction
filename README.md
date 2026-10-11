@@ -155,11 +155,23 @@ Submissions:
 | stack_v2 | XGBoost/LightGBM v2 + CatBoost | 0.96136 | 0.96102 |
 | stack_v5 | 12 models (v2 trees + RealMLP, several seeds) | 0.96144 | 0.96101 |
 | stack_v7 | 10 models (LightGBM v3 + XGBoost v3 + XGBoost v2 seeds, CatBoost, RealMLP) | 0.96153 | 0.96106 |
-| **stack_v9** | 15 models: stack_v7 + auxiliary-feature XGBoost/LightGBM + two `flat_anneal` RealMLPs | **0.96175** | **0.96140** |
+| stack_v9 | 15 models: stack_v7 + auxiliary-feature XGBoost/LightGBM + two `flat_anneal` RealMLPs | 0.96175 | 0.96140 |
+| stack_v12_pub | 18 own models + public OOFs with AUC >= 0.961 | 0.96205 | 0.96166 |
+| stack_v13_all_C1 | 18 own models + all 135 usable public OOFs, C=1 | 0.96210 | 0.96174 |
+| **stack_v13_all_C0.05** | same, C=0.05 | – | **0.96178** |
+| stack_v14_C0.05 | 24 own models + 135 public OOFs, C=0.05 | 0.96212 | 0.96176 |
+| stack_v14_C0.01 | same, C=0.01 | 0.96210 | 0.96172 |
 
 The auxiliary-task features were the biggest round-2 gain: +0.00009 for each tree model, and the RealMLPs
-that use them carry the largest stack weights. Still to train: `cat_ctr` (CatBoost with its own categorical statistics), `lgb_v3_ogev`
-and the round-3 seed models in `src/queue_round3.sh`.
+that use them carry the largest stack weights. Round 3 added `lgb_v3_ogev` (0.96135), `xgb_v3_aux_s2` (0.96138),
+`lgb_v3_aux_s2` (0.96142) and `realmlp_v3fa_aux_s2` (0.96147); they moved the own-model stack only from 0.96176 to 0.96177.
+
+The largest round-3 gain came from stacking the public OOF datasets (cdeotte's 124 public models + the TFM OOFs,
+in `data/public_oof/`, surveyed by `src/survey_public.py`; `stack.py --public MIN_AUC`): +0.0003 CV and +0.0004 public LB.
+Stronger regularization (lower C) did slightly better on the LB. The v13/v14 differences (±0.00004) are within public-LB noise.
+
+Not finished: `realmlp_v3fa_aux_s3` (CUDA out of memory on the 4 GB GPU at the last fold) and `cat_ctr`
+(skipped, since CatBoost has not helped the stack).
 
 ## What didn't help
 - Appending the original dataset to the training folds once the original-model logit was a feature.

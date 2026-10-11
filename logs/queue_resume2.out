@@ -1,0 +1,4 @@
+21:19:59 start realmlp_v3fa_aux_s2
+21:37:30 realmlp_v3fa_aux_s2 CV AUC: 0.96147
+21:37:30 start realmlp_v3fa_aux_s3
+22:21:14 realmlp_v3fa_aux_s3 OOM in fold 4 (hung), killed; cat_ctr skipped

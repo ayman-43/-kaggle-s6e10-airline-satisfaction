@@ -1,0 +1,171 @@
+W1011 21:37:47.349000 10112 site-packages\torch\utils\flop_counter.py:113] triton not found; flop counting will not work for triton kernels
+device: cuda | features: 160
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+\U0001f4a1 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+You are using a CUDA device ('NVIDIA GeForce RTX 2050') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+`Trainer.fit` stopped: `max_epochs=4` reached.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+\U0001f4a1 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+\U0001f4a1 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+fold 0: auc=0.96143 (257s)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+\U0001f4a1 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+`Trainer.fit` stopped: `max_epochs=4` reached.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+\U0001f4a1 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+\U0001f4a1 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+fold 1: auc=0.96066 (513s)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+\U0001f4a1 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+`Trainer.fit` stopped: `max_epochs=4` reached.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+\U0001f4a1 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+\U0001f4a1 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+fold 2: auc=0.96191 (776s)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+\U0001f4a1 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+`Trainer.fit` stopped: `max_epochs=4` reached.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+\U0001f4a1 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+\U0001f4a1 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+fold 3: auc=0.96143 (1037s)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+\U0001f4a1 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Traceback (most recent call last):
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_lightning\trainer\call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 630, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path, weights_only=weights_only)
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1079, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1123, in _run_stage
+    self.fit_loop.run()
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_lightning\loops\fit_loop.py", line 217, in run
+    self.advance()
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_lightning\loops\fit_loop.py", line 469, in advance
+    self.epoch_loop.run(self._data_fetcher)
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_lightning\loops\training_epoch_loop.py", line 153, in run
+    self.advance(data_fetcher)
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_lightning\loops\training_epoch_loop.py", line 354, in advance
+    batch_output = self.manual_optimization.run(kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_lightning\loops\optimization\manual.py", line 95, in run
+    self.advance(kwargs)
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_lightning\loops\optimization\manual.py", line 115, in advance
+    training_step_output = call._call_strategy_hook(trainer, "training_step", *kwargs.values())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_lightning\trainer\call.py", line 329, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_lightning\strategies\strategy.py", line 391, in training_step
+    return self.lightning_module.training_step(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytabkit\models\training\lightning_modules.py", line 152, in training_step
+    opt.step(loss=loss)
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_lightning\core\optimizer.py", line 154, in step
+    step_output = self._strategy.optimizer_step(self._optimizer, closure, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_lightning\strategies\strategy.py", line 239, in optimizer_step
+    return self.precision_plugin.optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_lightning\plugins\precision\precision.py", line 123, in optimizer_step
+    return optimizer.step(closure=closure, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\optim\optimizer.py", line 549, in wrapper
+    out = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytabkit\models\optim\optimizers.py", line 67, in step
+    self._opt_step_with_loss(loss)
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytabkit\models\optim\optimizers.py", line 80, in _opt_step_with_loss
+    self.opt.step()
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\optim\optimizer.py", line 549, in wrapper
+    out = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\optim\optimizer.py", line 79, in _use_grad
+    ret = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\optim\adam.py", line 248, in step
+    adam(
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\optim\optimizer.py", line 157, in maybe_fallback
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\optim\adam.py", line 970, in adam
+    func(
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\optim\adam.py", line 475, in _single_tensor_adam
+    exp_avg_sq.mul_(beta2).addcmul_(grad, grad, value=1 - beta2)  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.AcceleratorError: CUDA error: out of memory
+Search for `cudaErrorMemoryAllocation' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ayman\OneDrive\Desktop\kaggle\new_project\src\train_nn.py", line 88, in <module>
+    m.fit(Xa, y[tr_idx], X_val=Xb, y_val=y[va_idx], cat_col_names=cat_cols)
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytabkit\models\sklearn\sklearn_base.py", line 434, in fit
+    self.cv_alg_interface_.fit(ds=ds, idxs_list=idxs_list, interface_resources=interface_resources,
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytabkit\models\alg_interfaces\nn_interfaces.py", line 139, in fit
+    trainer.fit(
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 584, in fit
+    call._call_and_handle_interrupt(
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_lightning\trainer\call.py", line 70, in _call_and_handle_interrupt
+    trainer._teardown()
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1102, in _teardown
+    self.strategy.teardown()
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_lightning\strategies\strategy.py", line 536, in teardown
+    self.lightning_module.cpu()
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\lightning_fabric\utilities\device_dtype_mixin.py", line 86, in cpu
+    return super().cpu()
+           ^^^^^^^^^^^^^
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1166, in cpu
+    return self._apply(lambda t: t.cpu())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 933, in _apply
+    module._apply(fn)
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 933, in _apply
+    module._apply(fn)
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 933, in _apply
+    module._apply(fn)
+  [Previous line repeated 6 more times]
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1036, in _apply
+    self._buffers[key] = fn(buf)
+                         ^^^^^^^
+  File "C:\Users\ayman\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1166, in <lambda>
+    return self._apply(lambda t: t.cpu())
+                                 ^^^^^^^
+torch.AcceleratorError: CUDA error: out of memory
+Search for `cudaErrorMemoryAllocation' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+
