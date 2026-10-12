@@ -14,7 +14,10 @@ ROOT = Path(__file__).resolve().parent.parent / "data" / "public_oof"
 train, test, _ = load()
 y = train[TARGET].values
 rows = []
+seen = set()
 for f in sorted(ROOT.rglob("oof_*.npy")):
+    if f.parent.name.startswith("raw_"):
+        continue
     tf = f.with_name("test_" + f.name[4:])
     if not tf.exists():
         tf = f.with_name("pred_" + f.name[4:])
@@ -25,6 +28,10 @@ for f in sorted(ROOT.rglob("oof_*.npy")):
         print("skip", f.name, e); continue
     if len(o) != len(y) or t is None or len(t) != len(test) or not np.isfinite(o).all():
         print("skip", f.name, len(o), None if t is None else len(t)); continue
+    key = np.round(o[:2000], 5).tobytes()  # same model shipped in several datasets
+    if key in seen:
+        continue
+    seen.add(key)
     rows.append(dict(name=f.parent.name + "/" + f.stem[4:], oof=str(f), test=str(tf),
                      auc=roc_auc_score(y, o), lo=o.min(), hi=o.max()))
 df = pd.DataFrame(rows).sort_values("auc", ascending=False)

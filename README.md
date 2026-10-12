@@ -3,7 +3,7 @@
 My solution to [Kaggle Playground Series, Season 6 Episode 10](https://www.kaggle.com/competitions/playground-series-s6e10).
 The task is to predict the probability that an airline passenger is **satisfied**. Submissions are scored with **ROC AUC**.
 
-**Current best:** public LB **0.96140** (rank 320 of 1,426 on 2026-10-10), 5-fold CV **0.96175**.
+**Current best:** public LB **0.96186** (rank 49 of 1,611 on 2026-10-12), 5-fold CV **0.96224**.
 
 The competition data is synthetic, generated from the real
 [Airline Passenger Satisfaction](https://www.kaggle.com/datasets/teejmahal20/airline-passenger-satisfaction) dataset
@@ -158,9 +158,12 @@ Submissions:
 | stack_v9 | 15 models: stack_v7 + auxiliary-feature XGBoost/LightGBM + two `flat_anneal` RealMLPs | 0.96175 | 0.96140 |
 | stack_v12_pub | 18 own models + public OOFs with AUC >= 0.961 | 0.96205 | 0.96166 |
 | stack_v13_all_C1 | 18 own models + all 135 usable public OOFs, C=1 | 0.96210 | 0.96174 |
-| **stack_v13_all_C0.05** | same, C=0.05 | – | **0.96178** |
+| stack_v13_all_C0.05 | same, C=0.05 | – | 0.96178 |
 | stack_v14_C0.05 | 24 own models + 135 public OOFs, C=0.05 | 0.96212 | 0.96176 |
 | stack_v14_C0.01 | same, C=0.01 | 0.96210 | 0.96172 |
+| stack_v16_C0.05 | 24 own models + 234 deduplicated public OOFs (10 more public datasets), C=0.05 | 0.96220 | 0.96184 |
+| stack_v16_C0.02 | same, C=0.02 | 0.96221 | 0.96183 |
+| **blend_v17_3way** | equal logit blend of stack_v16_C0.05 + two public level-2 stacks (goodpjw2008 `stack245`, najiama `05_blend`) | 0.96224 | **0.96186** |
 
 The auxiliary-task features were the biggest round-2 gain: +0.00009 for each tree model, and the RealMLPs
 that use them carry the largest stack weights. Round 3 added `lgb_v3_ogev` (0.96135), `xgb_v3_aux_s2` (0.96138),
@@ -169,6 +172,12 @@ that use them carry the largest stack weights. Round 3 added `lgb_v3_ogev` (0.96
 The largest round-3 gain came from stacking the public OOF datasets (cdeotte's 124 public models + the TFM OOFs,
 in `data/public_oof/`, surveyed by `src/survey_public.py`; `stack.py --public MIN_AUC`): +0.0003 CV and +0.0004 public LB.
 Stronger regularization (lower C) did slightly better on the LB. The v13/v14 differences (±0.00004) are within public-LB noise.
+
+Round 4 (2026-10-12) added 10 more public OOF datasets (listed in `src/import_public2.py`'s inputs, the data sources of
+goodpjw2008's "Twin Stacks" notebook plus najiama's OOF blends). `src/import_public2.py` converts them to `oof_*/test_*`
+pairs, and `survey_public.py` now drops models that ship in several datasets (236 unique). Restacking gave +0.00008 CV and
++0.00006 public LB (rank 217 to 91). Our stack correlates 0.9998 with the best public level-2 stacks, so blending with
+them adds only +0.00004 CV; it still moved the public LB to 0.96186 (rank 49). Everyone at the top is on the same plateau now.
 
 Not finished: `realmlp_v3fa_aux_s3` (CUDA out of memory on the 4 GB GPU at the last fold) and `cat_ctr`
 (skipped, since CatBoost has not helped the stack).

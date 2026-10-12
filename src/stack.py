@@ -17,6 +17,7 @@ p.add_argument("names", nargs="+")
 p.add_argument("--out", default="stack")
 p.add_argument("--C", type=float, default=1.0)
 p.add_argument("--public", type=float, default=None)
+p.add_argument("--exclude", default=None, help="regex of public names to drop")
 args = p.parse_args()
 
 train, test, _ = load()
@@ -38,6 +39,8 @@ test_paths = [OOF_DIR / f"{n}_test.npy" for n in args.names]
 if args.public is not None:
     pub = pd.read_csv(OOF_DIR.parent / "data" / "public_oof" / "survey.csv")
     pub = pub[pub.auc >= args.public]
+    if args.exclude:
+        pub = pub[~pub.name.str.contains(args.exclude)]
     args.names += list(pub.name)
     oof_paths += list(pub.oof)
     test_paths += list(pub.test)
@@ -57,5 +60,7 @@ print(f"stack CV AUC: {roc_auc_score(y, oof):.5f}")
 m = LogisticRegression(C=args.C, max_iter=1000).fit(X, y)
 print("coefs:", dict(zip(args.names, np.round(m.coef_[0], 3))))
 pred = m.predict_proba(X_te)[:, 1]
+np.save(OOF_DIR / f"{args.out}_oof.npy", oof)  # logits, reusable as a level-2 input
+np.save(OOF_DIR / f"{args.out}_test.npy", m.decision_function(X_te))
 pd.DataFrame({"id": test["id"], TARGET: pred}).to_csv(SUB_DIR / f"{args.out}.csv", index=False)
 print("wrote", SUB_DIR / f"{args.out}.csv")
